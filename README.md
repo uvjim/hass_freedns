@@ -14,7 +14,7 @@ official Home Assistant integration which can be found
 
 When setting up the integration you will be asked for the following information.
 
-![Initial Setup Screen](https://github.com/uvjim/hass_freedns/raw/main/images/setup.png)
+![Initial Setup Screen](https://github.com/uvjim/hass_freedns/raw/master/images/setup.png)
 
 - `Full update URL`: this should be the full URL call to make for updates &ast;
 - `Access token`: the access token to use &ast;
@@ -27,7 +27,7 @@ When setting up the integration you will be asked for the following information.
 
 It is possible to configure the following options for the integration.
 
-![Options Screen](https://github.com/uvjim/hass_freedns/raw/main/images/options.png)
+![Options Screen](https://github.com/uvjim/hass_freedns/raw/master/images/options.png)
 
 - `Scan Interval (in minutes)`: the frequency in minutes at which the 
   FreeDNS API should be called
