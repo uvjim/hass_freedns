@@ -89,7 +89,7 @@ class FreeDNSConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
         session: ClientSession = self.hass.helpers.aiohttp_client.async_get_clientsession()
         try:
-            await async_update_freedns(hass=self.hass, session=session, url=url, auth_token=auth_token, timeout=timeout)
+            await async_update_freedns(session=session, url=url, auth_token=auth_token, timeout=timeout)
         except InvalidURL:
             self._errors["base"] = "invalid_url"
         except ClientError:
@@ -184,7 +184,7 @@ class FreeDNSOptionsFlowHandler(config_entries.OptionsFlow):
     ) -> None:
 
         session: ClientSession = self.hass.helpers.aiohttp_client.async_get_clientsession()
-        await async_update_freedns(hass=self.hass, session=session, url=url, auth_token=auth_token, timeout=timeout)
+        await async_update_freedns(session=session, url=url, auth_token=auth_token, timeout=timeout)
 
         self.hass.async_create_task(self.hass.config_entries.flow.async_configure(flow_id=self.flow_id))
 
