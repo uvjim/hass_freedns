@@ -1,0 +1,32 @@
+{
+    "config": {
+        "error": {
+            "below_minimum_scan_interval": "The lowest scan interval is 5 minutes",
+            "cant_connect": "Can't connect to FreeDNS API",
+            "invalid_url": "Invalid URL",
+            "url_access_exclusive": "Please supply either the URL or access token"
+        },
+        "step": {
+            "config": {
+                "data": {
+                    "url": "Full update URL",
+                    "access_token": "Access token",
+                    "scan_interval": "Scan interval (in minutes)"
+                },
+                "description": "Enter the details for the domains to update."
+            }
+        }
+    },
+    "options": {
+        "error": {
+            "below_minimum_scan_interval": "The lowest scan interval is 5 minutes"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "scan_interval": "Scan interval (in minutes)"
+                }
+            }
+        }
+    }
+}

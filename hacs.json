@@ -1,0 +1,6 @@
+{
+  "domains": "freedns",
+  "homeassistant": "2021.9.0",
+  "name": "FreeDNS",
+  "render_readme": true
+}

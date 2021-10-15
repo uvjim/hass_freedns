@@ -1,0 +1,11 @@
+{
+  "codeowners": [
+    "@uvjim"
+  ],
+  "config_flow": true,
+  "documentation": "",
+  "domain": "freedns",
+  "iot_class": "cloud_push",
+  "name": "FreeDNS",
+  "version": "1"
+}
