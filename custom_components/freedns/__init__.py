@@ -112,7 +112,11 @@ async def async_setup_entry(hass: HomeAssistant, config_entry: ConfigEntry) -> b
 
     async def async_update_domain_callback(_: datetime.datetime):
         """Update the FreeDNS entry."""
-        await async_update_freedns(session, url, auth_token, req_timeout)
+
+        try:
+            await async_update_freedns(session, url, auth_token, req_timeout)
+        except (asyncio.exceptions.TimeoutError, asyncio.exceptions.CancelledError):
+            pass
 
     config_entry.async_on_unload(
         async_track_time_interval(hass, async_update_domain_callback, datetime.timedelta(minutes=update_interval))
