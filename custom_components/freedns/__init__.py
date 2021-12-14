@@ -115,7 +115,11 @@ async def async_setup_entry(hass: HomeAssistant, config_entry: ConfigEntry) -> b
 
         try:
             await async_update_freedns(session, url, auth_token, req_timeout)
-        except (asyncio.exceptions.TimeoutError, asyncio.exceptions.CancelledError):
+        except (
+            asyncio.exceptions.TimeoutError,
+            asyncio.exceptions.CancelledError,
+            aiohttp.ClientConnectorError,
+        ):
             pass
 
     config_entry.async_on_unload(
