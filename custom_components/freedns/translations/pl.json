@@ -1,0 +1,32 @@
+{
+    "config": {
+        "error": {
+            "below_minimum_scan_interval": "Najmniejszy interwał skanowania to 5 minut",
+            "cant_connect": "Nie można połączyć się z API FreeDNS",
+            "invalid_url": "Nieprawidłowy URL",
+            "url_access_exclusive": "Podaj albo adres URL albo token dostępu"
+        },
+        "step": {
+            "config": {
+                "data": {
+                    "url": "Pełny adres URL aktualizacji",
+                    "access_token": "Token dostępu",
+                    "scan_interval": "Interwał skanowania (w minutach)"
+                },
+                "description": "Wprowadź szczegóły domen do aktualizacji."
+            }
+        }
+    },
+    "options": {
+        "error": {
+            "below_minimum_scan_interval": "Najmniejszy interwał skanowania to 5 minut"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "scan_interval": "Interwał skanowania (w minutach)"
+                }
+            }
+        }
+    }
+}
