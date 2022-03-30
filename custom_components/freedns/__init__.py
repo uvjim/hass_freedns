@@ -70,8 +70,8 @@ async def async_update_freedns(
         _LOGGER.error("Invalid URL: %s", url)
         raise
 
-    except aiohttp.ClientError:
-        _LOGGER.warning("Can't connect to FreeDNS API")
+    except aiohttp.ClientError as err:
+        _LOGGER.warning("Can't connect to FreeDNS API (%s)", err)
         raise
 
     except asyncio.TimeoutError:
