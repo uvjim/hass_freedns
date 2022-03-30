@@ -1,12 +1,14 @@
 """"""
+
+from __future__ import annotations
+
 import asyncio
-from aiohttp.client_exceptions import InvalidURL, ClientError
 import logging
-from typing import Union
 
 import homeassistant.helpers.config_validation as cv
 import voluptuous as vol
 from aiohttp import ClientSession
+from aiohttp.client_exceptions import InvalidURL, ClientError
 from homeassistant import config_entries, data_entry_flow
 from homeassistant.const import (
     CONF_ACCESS_TOKEN,
@@ -98,12 +100,12 @@ class FreeDNSConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         await asyncio.sleep(2)
         self.hass.async_create_task(self.hass.config_entries.flow.async_configure(flow_id=self.flow_id))
 
-    async def async_step_user(self, user_input: Union[dict, None] = None) -> data_entry_flow.FlowResult:
+    async def async_step_user(self, user_input: dict | None = None) -> data_entry_flow.FlowResult:
         """"""
 
         return await self.async_step_config()
 
-    async def async_step_config(self, user_input: Union[dict, None] = None) -> data_entry_flow.FlowResult:
+    async def async_step_config(self, user_input: dict | None = None) -> data_entry_flow.FlowResult:
         """"""
 
         if user_input is not None:
@@ -194,7 +196,7 @@ class FreeDNSOptionsFlowHandler(config_entries.OptionsFlow):
 
         return await self.async_step_options()
 
-    async def async_step_options(self, user_input: Union[dict, None] = None) -> data_entry_flow.FlowResult:
+    async def async_step_options(self, user_input: dict | None = None) -> data_entry_flow.FlowResult:
         """"""
 
         if user_input is not None:
